@@ -1,7 +1,5 @@
 let Spieler1score = 501;
 let Spieler2score = 501;
-Spieler1 = document.getElementById("Spieler1");
-Spieler2 = document.getElementById("Spieler2");
 const punkteEingabefeld = document.getElementById("Punkteingabefeld");
 const GewonneneLegsS1 = document.getElementById("bishergewonnenS1");
 const GewonneneLegsS2 = document.getElementById("bishergewonnenS2");
@@ -44,12 +42,12 @@ function Spielzugabschließen() {
 }
 
 function spieler1startet() {
-  Spieler1.active = true;
-  Spieler2.active = false;
+  Spieler1.classList.add("SpielerActive");
+  Spieler2.classList.remove("SpielerActive");
 }
 function spieler2startet() {
-  Spieler1.active = false;
-  Spieler2.active = true;
+  Spieler1.classList.remove("SpielerActive");
+  Spieler2.classList.add("SpielerActive");
 }
 
 function scoreupdate(Spieler1, Spieler2) {
