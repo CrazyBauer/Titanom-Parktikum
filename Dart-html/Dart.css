@@ -1,5 +1,5 @@
 html {
-  background-color: rgb(29, 25, 25);
+  background-color: rgb(49, 42, 42);
   color: white;
 }
 
@@ -30,10 +30,6 @@ html {
   background-color: rgb(50, 44, 44);
   color: white;
   width: 200px;
-}
-
-.aktiverSpieler {
-  color: green;
 }
 
 .red {

@@ -21,19 +21,32 @@ function addvalue(value) {
   } else {
     punkteEingabefeld.classList.add("red");
   }
-  console.log(punkteEingabefeld.value, punkteEingabefeld.classList);
+  //console.log(punkteEingabefeld.value, punkteEingabefeld.classList);
+}
+
+Spieler2 = Objekt();
+{
+  Spieler1.aktiv = true;
+  Spieler1.name = "Spieler1";
+  Spieler1.Spielstad = SpielstandS1;
+}
+Spieler2 = Objekt();
+{
+  Spieler2.aktiv = false;
+  Spieler2.name = "Spieler2";
+  Spieler2.Spielstad = SpielstandS2;
 }
 
 function neueraktiverSpieler() {
-  if (Spieler1.classList.contains("aktiverSpieler")) {
-    Spieler1.classList.remove("aktiverSpieler");
-    Spieler2.classList.add("aktiverSpieler");
+  if (Spieler1.aktiv) {
+    !Spieler1.aktiv;
+    !Spieler2.aktiv;
   } else {
-    Spieler1.classList.add("aktiverSpieler");
-    Spieler2.classList.remove("aktiverSpieler");
+    !Spieler1.aktiv;
+    !Spieler2.aktiv;
   }
 }
-function neuerSpielstand() {
+function updateSpielstand() {
   if (Spieler1.classList.contains("aktiverSpieler")) {
     SpielstandS1 = SpielstandS1 - punkteEingabefeld.value;
   } else {
@@ -42,15 +55,14 @@ function neuerSpielstand() {
 }
 
 function Spielzugabschließen() {
-  neuerSpielstand();
-  aktiverSpieler();
+  updateSpielstand();
+  neueraktiverSpieler();
 }
 
-function spieler1startet() {
-  Spieler1.classList.add("aktiverSpieler");
-  Spieler2.classList.remove("aktiverSpieler");
-}
-function spieler2startet() {
-  Spieler2.classList.add("aktiverSpieler");
-  Spieler1.classList.remove("aktiverSpieler");
-}
+//function spieler1startet() {
+//Spieler1.classList.add("aktiverSpieler");
+//  Spieler2.classList.remove("aktiverSpieler");
+//}
+//function spieler2startet() {
+//  Spieler2.classList.add("aktiverSpieler");
+//  Spieler1.classList.remove("aktiverSpieler");}
