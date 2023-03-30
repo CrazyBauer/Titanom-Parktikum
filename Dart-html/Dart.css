@@ -9,6 +9,10 @@ html {
   width: auto;
 }
 
+.SpielerActive {
+  color: green;
+}
+
 .container {
   justify-content: space-around;
   display: flex;
