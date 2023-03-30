@@ -1,0 +1,41 @@
+html {
+  background-color: rgb(29, 25, 25);
+  color: white;
+}
+
+.Spieler {
+  font-size: 50px;
+  align-items: center;
+  width: auto;
+}
+
+.container {
+  justify-content: space-around;
+  display: flex;
+}
+
+.Punktzahl {
+  color: white;
+  font-size: 70px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.container2 {
+  justify-content: center;
+  display: flex;
+}
+
+.Punkteeingabe {
+  font-size: 300%;
+  background-color: rgb(50, 44, 44);
+  color: white;
+  width: 200px;
+}
+
+.aktiverSpieler {
+  color: green;
+}
+
+.red {
+  color: red;
+}

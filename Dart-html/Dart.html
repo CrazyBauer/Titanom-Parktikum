@@ -1,0 +1,148 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="Dart.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="Spieler1" class="Spieler">Spieler1</h1>
+      <h1 id="Spieler2" class="Spieler">Spieler2</h1>
+    </div>
+    <div class="container">
+      <p id="bishergewonnenS1">Legs: Sets:</p>
+      <p id="bishergewonnenS1">Legs: Sets:</p>
+    </div>
+    <div class="container">
+      <p id="SpielstandtSpieler1" class="Punktzahl"></p>
+      <p id="SpielstandtSpieler2" class="Punktzahl"></p>
+    </div>
+    <div class="container">
+      <p id="avgS1">&Oslash;:</p>
+      <p id="avgS2">&Oslash;:</p>
+    </div>
+    <div class="container">
+      <p id="LetzteS1">Letzte:</p>
+      <p id="LetzteS2">Letzte:</p>
+    </div>
+    <div>
+      <div class="container">
+        <input
+          type="number"
+          id="Punkteingabefeld"
+          min="0"
+          max="180"
+          maxlength="3"
+        />
+      </div>
+      <div class="container2">
+        <button
+          type="button"
+          onclick="addvalue(1)"
+          class="Punkteeingabe"
+          id="button1"
+        >
+          1
+        </button>
+        <button
+          type="button"
+          onclick="addvalue(2)"
+          class="Punkteeingabe"
+          id="button2"
+        >
+          2
+        </button>
+        <button
+          type="button"
+          onclick="addvalue(3)"
+          class="Punkteeingabe"
+          id="button3"
+        >
+          3
+        </button>
+      </div>
+      <div class="container2">
+        <button
+          type="button"
+          onclick="addvalue(4)"
+          class="Punkteeingabe"
+          id="button4"
+        >
+          4
+        </button>
+        <button
+          type="button"
+          onclick="addvalue(5)"
+          class="Punkteeingabe"
+          id="button5"
+        >
+          5
+        </button>
+        <button
+          type="button"
+          onclick="addvalue(6)"
+          class="Punkteeingabe"
+          id="button6"
+        >
+          6
+        </button>
+      </div>
+      <div class="container2">
+        <button
+          type="button"
+          onclick="addvalue(7)"
+          class="Punkteeingabe"
+          id="button7"
+        >
+          7
+        </button>
+        <button
+          type="button"
+          onclick="addvalue(8)"
+          class="Punkteeingabe"
+          id="button8"
+        >
+          8
+        </button>
+        <button
+          type="button"
+          onclick="addvalue(9)"
+          class="Punkteeingabe"
+          id="button9"
+        >
+          9
+        </button>
+      </div>
+      <div class="container2">
+        <button
+          type="button"
+          onclick="Spielzugabschließen()"
+          class="Punkteeingabe"
+          id="annehmen"
+        >
+          ✔️
+        </button>
+        <button
+          type="button"
+          onclick="addvalue(0)"
+          class="Punkteeingabe"
+          id="button0"
+        >
+          0
+        </button>
+        <button type="button" onclick="" class="Punkteeingabe" id="abbrechen">
+          ❌
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <button id="Spielernamenändern">Spielernamen ändern</button>
+      <button id="Spieler1startet" onclick="spieler1startet()">
+        Spieler1 startet
+      </button>
+      <button id="Spieler2startet" onclick="spieler2startet()">
+        Spieler2startet
+      </button>
+    </div>
+
+    <script src="Dart.js"></script>
+  </body>
+</html>
