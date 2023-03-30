@@ -1,8 +1,8 @@
 let Spieler1score = 501;
 let Spieler2score = 501;
+Spieler1 = document.getElementById("Spieler1");
+Spieler2 = document.getElementById("Spieler2");
 const punkteEingabefeld = document.getElementById("Punkteingabefeld");
-const Spieler1 = document.getElementById("Spieler1");
-const Spieler2 = document.getElementById("Spieler2");
 const GewonneneLegsS1 = document.getElementById("bishergewonnenS1");
 const GewonneneLegsS2 = document.getElementById("bishergewonnenS2");
 const GewonneneSetsS1 = document.getElementById("bishergewonnenS1");
@@ -23,6 +23,11 @@ function addvalue(value) {
   } else {
     punkteEingabefeld.classList.add("red");
   }
+  if (punkteEingabefeld.value < 180) {
+    punkteEingabefeld.classList.remove("red");
+  } else {
+    punkteEingabefeld.classList.add("red");
+  }
 }
 function updateSpielstand() {
   if (Spieler1.activ) {
@@ -35,7 +40,7 @@ function updateSpielstand() {
 function Spielzugabschließen() {
   scoreupdate();
   updateactivSpieler();
-  return punkteEingabefeld((value = ""));
+  removeValue();
 }
 
 function spieler1startet() {
@@ -48,7 +53,7 @@ function spieler2startet() {
 }
 
 function scoreupdate(Spieler1, Spieler2) {
-  if (Spieler1.active) {
+  if (Spieler1.classList.contains("SpielerActive")) {
     Spieler1score = Spieler1score - punkteEingabefeld.value;
   } else {
     Spieler2score = Spieler2score - punkteEingabefeld.value;
@@ -56,7 +61,13 @@ function scoreupdate(Spieler1, Spieler2) {
 }
 function updateactivSpieler() {
   if (Spieler1.classList.contains("SpielerActive")) {
+    Spieler1.classList.remove("SpielerActive");
+    Spieler2.classList.add("SpielerActive");
   }
   Spieler1active = !Spieler1.active;
   Spieler2active = !Spieler2.active;
+}
+
+function removeValue(value) {
+  punkteEingabefeld.value -= value;
 }
