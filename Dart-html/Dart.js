@@ -34,7 +34,7 @@ function neueraktiverSpieler() {
   }
 }
 function neuerSpielstand() {
-  if (Player1.classList.contains("aktiverSpieler")) {
+  if (Spieler1.classList.contains("aktiverSpieler")) {
     SpielstandS1 = SpielstandS1 - punkteEingabefeld.value;
   } else {
     SpielstandS2 = SpielstandS2 - punkteEingabefeld.value;
@@ -42,8 +42,8 @@ function neuerSpielstand() {
 }
 
 function Spielzugabschließen() {
-  aktiverSpieler();
   neuerSpielstand();
+  aktiverSpieler();
 }
 
 function spieler1startet() {
