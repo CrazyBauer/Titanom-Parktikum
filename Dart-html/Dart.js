@@ -83,12 +83,6 @@ function überprüfenObGewonnen() {
   }
 }
 function neueLetzteAufnahme() {
-  console.log(
-    Spieler1.classList.contains("SpielerActive"),
-    punkteEingabefeld.value,
-    LetzteAufnahmeS1.textContent,
-    LetzteAufnahmeS2.textContent
-  );
   if (Spieler1.classList.contains("SpielerActive")) {
     LetzteAufnahmeS1.textContent = punkteEingabefeld.value;
   } else {
