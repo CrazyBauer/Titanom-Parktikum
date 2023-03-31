@@ -35,7 +35,7 @@ function addvalue(value) {
 
 function Spielzugabschließen() {
   überprüfenObzuVielePunkte();
-  scoreupdate();
+  überprüfenObÜberworfe();
   neueLetzteAufnahme();
   updateactivSpieler();
   removeValue();
@@ -68,6 +68,21 @@ function updateactivSpieler() {
     Spieler2.classList.remove("SpielerActive");
   }
 }
+function überprüfenObÜberworfe() {
+  if (Spieler1.classList.contains("SpielerAktive")) {
+    if (ÜberprüfenObÜberworfenS1()) {
+      Spieler1score += punkteEingabefeld.value;
+    } else {
+      scoreupdate();
+    }
+  } else {
+    if (überprüfenObÜberworfenS2()) {
+      Spieler2score += punkteEingabefeld.value;
+    } else {
+      scoreupdate();
+    }
+  }
+}
 function überprüfenObÜberworfenS1() {
   if (Spieler1score - punkteEingabefeld.value > 2) {
     return true;
@@ -75,7 +90,6 @@ function überprüfenObÜberworfenS1() {
 }
 function überprüfenObÜberworfenS2() {
   if (Spieler2score - punkteEingabefeld.value > 2) {
-    return true;
   }
 }
 function removeValue(value) {
@@ -143,6 +157,6 @@ function überprüfenObzuVielePunkte() {
     punkteEingabefeld.value == 163
   ) {
     punkteEingabefeld.value = 0;
-    alert("entweder vertippt oder verrechnet");
+    alert("error");
   }
 }
