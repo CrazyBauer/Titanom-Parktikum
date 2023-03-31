@@ -7,14 +7,15 @@ const Spieler1 = document.getElementById("Spieler1");
 const Spieler2 = document.getElementById("Spieler2");
 const Spieler1score = document.getElementById("SpielstandtSpieler1");
 const Spieler2score = document.getElementById("SpielstandtSpieler2");
+const LetzteAufnahmeS1 = document.getElementById("LetzteS1");
+const LetzteAufnahmeS2 = document.getElementById("LetzteS2");
 document.getElementById("SpielstandtSpieler2").innerHTML = Spieler2score;
-const Spieler1Active = Spieler1.active;
-const Spieler2Active = Spieler2.active;
-
 document.getElementById("button1");
 document.getElementById("Punkteingabefeld");
 Spieler2score.textContent = 501;
 Spieler1score.textContent = 501;
+LetzteAufnahmeS1.value = 0;
+LetzteAufnahmeS2.value = 0;
 
 function addvalue(value) {
   punkteEingabefeld.value += value;
@@ -34,8 +35,10 @@ function addvalue(value) {
 
 function Spielzugabschließen() {
   scoreupdate();
+  neueLetzteAufnahme();
   updateactivSpieler();
   removeValue();
+  überprüfenObGewonnen();
 }
 
 function spieler1startet() {
@@ -67,4 +70,31 @@ function updateactivSpieler() {
 function removeValue(value) {
   punkteEingabefeld.value -= value;
 }
-function neueravg() {}
+function überprüfenObGewonnen() {
+  if (Spieler1score.textContent == 0) {
+    GewonneneLegsS1.textContent += 1;
+    Spieler1score.textContent = 501;
+    Spieler2score.textContent = 501;
+  }
+  if (Spieler2score.textContent == 0) {
+    GewonneneLegsS2.textContent += 1;
+    Spieler2score.textContent = 501;
+    Spieler1score.textContent = 501;
+  }
+}
+function neueLetzteAufnahme() {
+  console.log(
+    Spieler1.classList.contains("SpielerActive"),
+    punkteEingabefeld.value,
+    LetzteAufnahmeS1.textContent,
+    LetzteAufnahmeS2.textContent
+  );
+  if (Spieler1.classList.contains("SpielerActive")) {
+    LetzteAufnahmeS1.textContent = punkteEingabefeld.value;
+  } else {
+    LetzteAufnahmeS2.textContent = punkteEingabefeld.value;
+  }
+}
+
+//Aufnahmenarr[0];
+//function neuerAVG() {}
