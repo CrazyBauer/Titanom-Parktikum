@@ -121,6 +121,8 @@ function überprüfenObGewonnen() {
     alert("Spieler2 hat gewonnen");
     GewonneneLegsS1.textContent = 0;
     GewonneneLegsS2.textContent = 0;
+    LetzteAufnahmeS1.textContent = 0;
+    LetzteAufnahmeS1.textContent = 0;
   }
 }
 
