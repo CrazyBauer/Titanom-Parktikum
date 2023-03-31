@@ -68,7 +68,16 @@ function updateactivSpieler() {
     Spieler2.classList.remove("SpielerActive");
   }
 }
-function überprüfenObÜberworfen() {}
+function überprüfenObÜberworfenS1() {
+  if (Spieler1score - punkteEingabefeld.value > 2) {
+    return true;
+  }
+}
+function überprüfenObÜberworfenS2() {
+  if (Spieler2score - punkteEingabefeld.value > 2) {
+    return true;
+  }
+}
 function removeValue(value) {
   punkteEingabefeld.value -= value;
 }
@@ -132,6 +141,6 @@ function überprüfenObzuVielePunkte() {
     punkteEingabefeld.value == 163
   ) {
     punkteEingabefeld.value = 0;
-    alert("geht nicht!");
+    alert("entweder vertippt oder verrechnet");
   }
 }
