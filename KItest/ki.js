@@ -18,8 +18,11 @@ fetch(apiUrl, {
   headers: header,
   body: JSON.stringify(requestBody),
 })
-  .then((Response) => Response.json())
+  .then((response) => response.json())
   .then((data) => {
     console.log(data.choices[0].text);
-  })
-  .catch((error) => console.log(error));
+  }
+  
+  
+   )
+  
