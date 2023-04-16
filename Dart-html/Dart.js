@@ -35,12 +35,21 @@ function addvalue(value) {
 
 function Spielzugabschließen() {
   überprüfenObzuVielePunkte();
-  überprüfenObÜberworfe();
-  neueLetzteAufnahme();
-  updateactivSpieler();
-  removeValue();
-  überprüfenObGewonnen();
+ // if (!überprüfenObÜberworfen()){
+    scoreupdate();
+    neueLetzteAufnahme();
+    updateactivSpieler();
+    removeValue();
+    überprüfenObGewonnen(); 
+  //}else{ 
+ // neueLetzteAufnahmeÜberworfen();
+ // scoreupdate();
+ //scoreupdateüberworfen();
+ // updateactivSpieler();
+ // removeValue();
+ // überprüfenObGewonnen();
 }
+//}
 
 function spieler1startet() {
   Spieler1.classList.add("SpielerActive");
@@ -53,44 +62,39 @@ function spieler2startet() {
 
 function scoreupdate() {
   if (Spieler1.classList.contains("SpielerActive")) {
-    Spieler1score.textContent -= punkteEingabefeld.value;
-  } else {
-    Spieler2score.textContent -= punkteEingabefeld.value;
+    if(Spieler1score.textContent - punkteEingabefeld.value == 1 || Spieler1score.textContent - punkteEingabefeld.value < 0 ){
+      Spieler1score.textContent = Spieler1score.textContent
+      alert("Überworfen")
   }
-}
+  else{
+    Spieler1score.textContent -= punkteEingabefeld.value;
+  }
+  } else {
+    if(Spieler2score.textContent - punkteEingabefeld.value == 1 || Spieler2score.textContent - punkteEingabefeld.value < 0 ){
+      Spieler2score.textContent = Spieler2score.textContent
+      alert("Überworfen")
+  }
+  else{
+    Spieler2score.textContent -= punkteEingabefeld.value
+  }
+}}
 
 function updateactivSpieler() {
   if (Spieler1.classList.contains("SpielerActive")) {
     Spieler1.classList.remove("SpielerActive");
+    Spieler1score.classList.remove("SpielerActive")
+    Spieler2score.classList.add("SpielerActive")
     Spieler2.classList.add("SpielerActive");
   } else {
+    Spieler1score.classList.add("SpielerActive")
+    Spieler2score.classList.remove("SpielerActive")
     Spieler1.classList.add("SpielerActive");
     Spieler2.classList.remove("SpielerActive");
   }
 }
-function überprüfenObÜberworfe() {
-  if (Spieler1.classList.contains("SpielerAktive")) {
-    if (ÜberprüfenObÜberworfenS1()) {
-      Spieler1score += punkteEingabefeld.value;
-    } else {
-      scoreupdate();
-    }
-  } else {
-    if (überprüfenObÜberworfenS2()) {
-      Spieler2score += punkteEingabefeld.value;
-    } else {
-      scoreupdate();
-    }
-  }
-}
-function überprüfenObÜberworfenS1() {
-  if (Spieler1score - punkteEingabefeld.value > 2) {
-    return true;
-  }
-}
-function überprüfenObÜberworfenS2() {
-  if (Spieler2score - punkteEingabefeld.value > 2) {
-  }
+function überprüfenObÜberworfen() {
+if(Spieler1score - punkteEingabefeld.value <= 1 || Spieler2score - punkteEingabefeld.value <= 1){
+ }
 }
 function removeValue(value) {
   punkteEingabefeld.value -= value;
@@ -102,7 +106,13 @@ function neueLetzteAufnahme() {
     LetzteAufnahmeS2.textContent = punkteEingabefeld.value;
   }
 }
-
+function neueLetzteAufnahmeÜberworfen() {
+  if (Spieler1.classList.contains("SpielerActive")) {
+    LetzteAufnahmeS1.textContent = 0;
+  } else {
+    LetzteAufnahmeS2.textContent = 0;
+  }
+}
 function überprüfenObGewonnen() {
   if (Spieler1score.textContent == 0) {
     GewonneneLegsS1.textContent += 1;
@@ -142,6 +152,7 @@ function überprüfenObGewonnen() {
 
 function überprüfenObzuVielePunkte() {
   if (
+    punkteEingabefeld.value < 1 ||
     punkteEingabefeld.value > 180 ||
     punkteEingabefeld.value == 163 ||
     punkteEingabefeld.value == 166 ||
@@ -160,3 +171,8 @@ function überprüfenObzuVielePunkte() {
     alert("error");
   }
 }
+//  if(Spieler1.classList.contains("SpielerActive")){
+ //   Spieler1score.textContent += Spieler1score.textContent + punkteEingabefeld.value
+ //   }else{
+   // Spieler2score.textContent += Spieler2score.textContent + punkteEingabefeld.value
+  //}}

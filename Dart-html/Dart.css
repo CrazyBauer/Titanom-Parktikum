@@ -1,4 +1,4 @@
-html {
+body {
   background-color: rgb(49, 42, 42);
   color: white;
 }
@@ -7,6 +7,12 @@ html {
   font-size: 45px;
   align-items: center;
   width: auto;
+}
+
+.Punktzahl {
+  color: white;
+  font-size: 70px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .SpielerActive {
@@ -18,11 +24,6 @@ html {
   display: flex;
 }
 
-.Punktzahl {
-  color: white;
-  font-size: 70px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
 
 .container2 {
   justify-content: center;
